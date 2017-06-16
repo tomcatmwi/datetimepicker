@@ -1,0 +1,19 @@
+<div class="flex-container">
+    
+            <button class="btn btn-primary datebtn" (click)="stepdate(-1);" *ngIf="!nobutton"><i class="fa fa-arrow-left"></i></button>
+
+            <select id="year" (change)="dateChange();" class="form-control" [(ngModel)]="selectYear" #year (change)="updateDays(year.value, month.value);">
+                <option *ngFor="let year of years" value="{{ year }}">{{ year }}</option>
+            </select>
+
+            <select id="month" (change)="dateChange();" class="form-control" [(ngModel)]="selectMonth" #month (change)="updateDays(year.value, month.value);">
+                <option *ngFor="let month of months, let i = index" value="{{ i+1 }}">{{ month }}</option>
+            </select>
+
+            <select id="day" (change)="dateChange();" class="form-control" [(ngModel)]="selectDay" (change)="onChange(this.calcDate());">
+                <option *ngFor="let day of days" value="{{ day }}">{{ day }}</option>
+            </select>
+
+            <button class="btn btn-primary datebtn" (click)="stepdate(1);" *ngIf="!nobutton"><i class="fa fa-arrow-right"></i></button>
+            
+</div>

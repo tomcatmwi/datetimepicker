@@ -1,0 +1,31 @@
+.flex-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+select {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    max-width: auto;
+    width: auto;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 600px) {
+    select {
+        font-size: 0.85em;
+        width: 100%;
+        min-width: 100%;
+        overflow: hidden;
+        margin: 0.3em 0 0.3em 0;
+    }
+    
+    .datebtn {
+        display: none;
+    }
+}
